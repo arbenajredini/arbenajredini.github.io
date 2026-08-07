@@ -100,7 +100,7 @@ body {
   margin: 0 0 12px;
 }
 
-.section__title { margin: 0 0 24px; }
+.section__title { margin: 0 0 24px; font-family: var(--font-display); }
 
 /* ---- Misregistration headline ---- */
 .misregister { position: relative; display: inline-block; }
