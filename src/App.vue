@@ -6,6 +6,7 @@ import Projects from './components/sections/Projects.vue'
 import Research from './components/sections/Research.vue'
 import Books from './components/sections/Books.vue'
 import Blog from './components/sections/Blog.vue'
+import Skills from './components/sections/Skills.vue'
 </script>
 
 <template>
@@ -16,5 +17,6 @@ import Blog from './components/sections/Blog.vue'
     <Research />
     <Books />
     <Blog />
+    <Skills />
   </ZinePage>
 </template>
