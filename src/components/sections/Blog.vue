@@ -1,15 +1,9 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import SectionShell from '../SectionShell.vue'
-import { useReveal } from '../../composables/useReveal'
 import { cv } from '../../content/cv'
 
-const list = ref(null)
-const posts = ref([])
 const open = reactive({})
-const { stagger } = useReveal()
-
-onMounted(() => stagger(list.value, { items: posts.value }))
 
 function iso(isoStr) {
   const m = /^(\d{4})-(\d{2})/.exec(isoStr)
@@ -20,9 +14,9 @@ function iso(isoStr) {
 </script>
 
 <template>
-  <SectionShell id="blog" kicker="06 / Blog" title="Blog" ink="blog">
-    <ul ref="list" class="posts">
-      <li v-for="(p, i) in cv.posts" :key="p.title" ref="posts" class="post">
+  <SectionShell id="blog" kicker="C / Blog" title="Blog" ink="blog">
+    <ul class="posts">
+      <li v-for="(p, i) in cv.posts" :key="p.title" class="post">
         <p class="post__date mono muted">{{ iso(p.date) }}</p>
         <h3 class="post__title">{{ p.title }}</h3>
         <p class="post__tags mono muted"><span v-for="t in p.tags" :key="t">#{{ t }} </span></p>

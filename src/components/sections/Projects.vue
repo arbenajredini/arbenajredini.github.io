@@ -1,24 +1,17 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import SectionShell from '../SectionShell.vue'
-import { useReveal } from '../../composables/useReveal'
 import { cv } from '../../content/cv'
 
-const grid = ref(null)
-const cards = ref([])
 const open = reactive({})
-const { stagger } = useReveal()
-
-onMounted(() => stagger(grid.value, { items: cards.value }))
 </script>
 
 <template>
-  <SectionShell id="projects" kicker="03 / Projects" title="Projects" ink="projects">
-    <div ref="grid" class="projects">
+  <SectionShell id="projects" kicker="A / Projects" title="Projects" ink="projects">
+    <div class="projects">
       <article
         v-for="(p, i) in cv.projects"
         :key="p.title"
-        ref="cards"
         class="project-card"
         :class="{ 'is-open': open[i] }"
       >
