@@ -1,8 +1,9 @@
 <script setup>
+import ZinePage from './components/ZinePage.vue'
 </script>
 
 <template>
-  <div class="text-3xl">
-    Welcome to the Arben Ajredini's github page!
-  </div>
+  <ZinePage>
+    <p class="serif-i" style="padding-top: 4rem">The zine is being typeset…</p>
+  </ZinePage>
 </template>
