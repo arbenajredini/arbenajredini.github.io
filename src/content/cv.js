@@ -1,40 +1,120 @@
 // Single source of truth for the entire portfolio.
-// Replace these placeholders with your real content — do not change the shape.
+// Professional data sourced from /Users/endrit/Downloads/Profile.pdf (2026-08-07).
 export const cv = {
   profile: {
     name: 'Arben Ajredini',
-    role: 'Software Developer',
-    tagline: 'Builds fast, colorful software. Reads. Researches. Writes it down.',
-    location: 'Prishtina, Kosovo',
+    role: 'Software Engineer',
+    tagline: 'Software Engineer | Mathematics',
+    location: 'Pristina, Kosovo',
     contact: {
-      email: 'you@example.com',
-      website: 'https://github.com/you',
+      email: 'arbenajredini55@gmail.com',
+      website: 'https://www.linkedin.com/in/arben-ajredini',
     },
+  },
+  summary: {
+    headline: 'Software Engineer | Mathematics',
+    body: 'Software engineer with a mathematics background, shipping real-time mobile and cloud systems end to end — from NestJS microservices and native iOS apps to AI-model evaluation.',
   },
   experience: [
     {
-      company: 'Acme Corp',
+      company: 'ABEL',
       role: 'Senior Software Engineer',
-      period: '2022 — Present',
-      summary: 'Building the team’s realtime platform on Vue and Go.',
-      note: 'The event-driven migration that made p95 drops real.',
+      period: 'Nov 2024 — Present',
+      summary: 'Architected real-time mobile and cloud ecosystems, leading backend microservices and native iOS engineering across the full product lifecycle.',
       bullets: [
-        'Led migration of the billing service to event-driven architecture, cutting p95 latency 40%.',
-        'Mentored three junior engineers; ran the frontend guild.',
+        'Backend Architecture: built scalable NestJS microservices for real-time data streaming, background processing, and low-latency API communication.',
+        'iOS Engineering: engineered high-performance native iOS apps (Swift, SwiftUI) with an emphasis on offline-first state management, clean architecture, and rapid UI rendering.',
+        'End-to-End Delivery: owned full-stack feature delivery from API design and service deployment to App Store release.',
       ],
-      tags: ['Vue', 'Go', 'Kafka', 'Postgres'],
+      tags: ['NestJS', 'TypeScript', 'Swift', 'SwiftUI', 'Microservices'],
     },
     {
-      company: 'Beta Labs',
+      company: 'Independent',
       role: 'Software Engineer',
-      period: '2019 — 2022',
-      summary: 'Full-stack features across a research-data product.',
+      period: 'Jan 2020 — Present',
+      summary: 'Provide software engineering services to several companies — education apps, trading automation apps, and AI integrations.',
       bullets: [
-        'Shipped the annotation pipeline used by 200+ researchers.',
-        'Introduced typed API client generation, removing a whole class of bugs.',
+        'Delivered full-stack software engineering services across education apps, trading automation apps, and AI integrations.',
       ],
-      tags: ['TypeScript', 'React', 'Python', 'Docker'],
+      tags: ['Full-stack', 'AI'],
     },
+    {
+      company: 'Mercor',
+      role: 'Software Engineering Expert',
+      period: 'Feb 2026 — Jun 2026',
+      summary: 'Created and reviewed coding tasks used to evaluate AI models on benchmarks like SWE-bench.',
+      bullets: [
+        'Wrote test cases and rubrics to check whether model-generated code actually solves the problem.',
+        'Reviewed pull requests and patches for correctness, code quality, and edge cases.',
+      ],
+      tags: ['AI evaluation', 'SWE-bench', 'Code review'],
+    },
+    {
+      company: 'Mercor',
+      role: 'Math Expert',
+      period: 'Oct 2025 — Feb 2026',
+      summary: 'Reviewed AI-generated math solutions for accuracy and clear reasoning.',
+      bullets: [
+        'Scored responses against rubrics, checking both the steps and the final answer.',
+        'Wrote and vetted math problems used to train and test AI models.',
+        'Worked with other math experts to keep grading consistent.',
+      ],
+      tags: ['AI evaluation', 'Mathematics'],
+    },
+    {
+      company: 'Matrics',
+      role: 'iOS Engineer',
+      period: 'Mar 2022 — Nov 2024',
+      summary: 'Built high-quality iOS UIs and tests as part of the core engineering team.',
+      bullets: [
+        'Created UIs using best practices and the chosen design pattern (UIKit + MVVM + Coordinator Pattern).',
+        'Unit and UI testing with XCTest.',
+        'Part of the core team refactoring from React Native to Swift.',
+      ],
+      tags: ['Swift', 'UIKit', 'MVVM', 'XCTest'],
+    },
+    {
+      company: 'Matrics',
+      role: 'Software Engineer',
+      period: 'Jan 2021 — Mar 2022',
+      summary: 'Full-stack engineering across backend, web, and mobile.',
+      bullets: [
+        'Microservices with NestJS and Go.',
+        'NextJS website.',
+        'React Native mobile application.',
+      ],
+      tags: ['NestJS', 'Go', 'NextJS', 'React Native'],
+    },
+  ],
+  skills: {
+    top: [
+      { skill: 'TypeScript', level: 90 },
+      { skill: 'Microservices', level: 85 },
+      { skill: 'Keras', level: 75 },
+    ],
+    toolbox: {
+      Backend: ['NestJS', 'Go', 'Microservices'],
+      Mobile: ['Swift', 'SwiftUI', 'UIKit', 'React Native'],
+      Frontend: ['NextJS', 'TypeScript'],
+      'ML / AI': ['Keras', 'Pandas', 'AI evaluation', 'SWE-bench'],
+    },
+  },
+  certifications: [
+    {
+      title: 'Machine Learning Specialization',
+      courses: [
+        'Supervised Machine Learning: Regression and Classification',
+        'Unsupervised Learning, Recommenders, Reinforcement Learning',
+        'Advanced Learning Algorithms',
+      ],
+    },
+  ],
+  education: [
+    { school: 'University of Prishtina', degree: 'Bachelor of Science — Mathematics', period: '2019 — 2022' },
+  ],
+  honors: [
+    { award: 'First Prize', detail: '29th International Mathematics Competition for University Students' },
+    { award: 'First Prize', detail: '28th International Mathematics Competition for University Students' },
   ],
   projects: [
     {
@@ -54,22 +134,6 @@ export const cv = {
       approach: 'Position annotations in a reflowed gutter beside their anchor.',
       stack: ['TypeScript', 'DOM', 'Vite'],
       links: { repo: 'https://github.com/you/marginalia' },
-    },
-  ],
-  research: [
-    {
-      title: 'Realtime layouts with constraint-based editors',
-      venue: 'Example Conference on Interactive Systems',
-      year: 2024,
-      abstract: 'A framework for layout engines that keep interactive editors realtime by constraining the recompute surface.',
-      url: 'https://example.com/paper-1',
-    },
-    {
-      title: 'The typographic baseline grid as a UX primitive',
-      venue: 'Journal of Interface Craft',
-      year: 2023,
-      abstract: 'Argues the print baseline grid is a usable spatial grammar for web interfaces.',
-      url: 'https://example.com/paper-2',
     },
   ],
   books: [
@@ -93,16 +157,8 @@ export const cv = {
       tags: ['typography', 'css'],
     },
   ],
-  skills: {
-    groups: [
-      { name: 'Languages', items: [ { skill: 'JavaScript', level: 95 }, { skill: 'TypeScript', level: 90 }, { skill: 'Go', level: 80 } ] },
-      { name: 'Frontend', items: [ { skill: 'Vue', level: 92 }, { skill: 'CSS/Tailwind', level: 88 }, { skill: 'WebGL', level: 60 } ] },
-      { name: 'Tools', items: [ { skill: 'Git', level: 96 }, { skill: 'Docker', level: 74 }, { skill: 'CI', level: 70 } ] },
-    ],
-  },
   socials: [
-    { label: 'GitHub', url: 'https://github.com/you' },
-    { label: 'X', url: 'https://x.com/you' },
-    { label: 'Email', url: 'mailto:you@example.com' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/arben-ajredini' },
+    { label: 'Email', url: 'mailto:arbenajredini55@gmail.com' },
   ],
 }

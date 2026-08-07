@@ -4,18 +4,25 @@ import Skills from './Skills.vue'
 import { cv } from '../../content/cv'
 
 describe('Skills', () => {
-  it('renders every group and item', () => {
+  it('renders every top skill with its level', () => {
     const w = mount(Skills)
-    for (const g of cv.skills.groups) {
-      expect(w.text()).toContain(g.name)
-      for (const it of g.items) expect(w.text()).toContain(it.skill)
+    for (const it of cv.skills.top) {
+      expect(w.text()).toContain(it.skill)
+      expect(w.text()).toContain(`${it.level}%`)
     }
   })
+
+  it('renders every toolbox group and tag', () => {
+    const w = mount(Skills)
+    for (const [name, items] of Object.entries(cv.skills.toolbox)) {
+      expect(w.text()).toContain(name)
+      for (const t of items) expect(w.text()).toContain(t)
+    }
+  })
+
   it('bars carry their level as inline width and data-level', () => {
     const w = mount(Skills)
-    const fills = w.findAll('.bar__fill')
-    expect(fills.length).toBeGreaterThan(0)
-    const first = cv.skills.groups[0].items[0]
+    const first = cv.skills.top[0]
     const fill = w.find('.bar__fill')
     expect(fill.attributes('data-level')).toBe(String(first.level))
     expect(fill.attributes('style')).toContain(`${first.level}%`)

@@ -3,7 +3,7 @@ import { cv } from './cv'
 
 describe('cv content model', () => {
   it('has all top-level sections', () => {
-    for (const key of ['profile', 'experience', 'projects', 'research', 'books', 'posts', 'skills', 'socials']) {
+    for (const key of ['profile', 'summary', 'experience', 'skills', 'certifications', 'education', 'honors', 'projects', 'books', 'posts', 'socials']) {
       expect(cv[key], `missing ${key}`).toBeDefined()
     }
   })
@@ -16,11 +16,47 @@ describe('cv content model', () => {
     expect(typeof cv.profile.contact.website).toBe('string')
   })
 
-  it('experience entries have the required fields', () => {
+  it('summary has a headline and body', () => {
+    expect(typeof cv.summary.headline).toBe('string')
+    expect(typeof cv.summary.body).toBe('string')
+  })
+
+  it('experience entries have company, role, period, bullets, tags', () => {
     for (const e of cv.experience) {
       expect(e.company && e.role && e.period).toBeTruthy()
       expect(Array.isArray(e.bullets)).toBe(true)
       expect(Array.isArray(e.tags)).toBe(true)
+    }
+  })
+
+  it('skills have a top list with 0..100 levels and a toolbox map of string arrays', () => {
+    for (const it of cv.skills.top) {
+      expect(Number.isInteger(it.level)).toBe(true)
+      expect(it.level).toBeGreaterThanOrEqual(0)
+      expect(it.level).toBeLessThanOrEqual(100)
+    }
+    for (const items of Object.values(cv.skills.toolbox)) {
+      expect(Array.isArray(items)).toBe(true)
+      for (const t of items) expect(typeof t).toBe('string')
+    }
+  })
+
+  it('certifications have a title and a list of courses', () => {
+    for (const c of cv.certifications) {
+      expect(typeof c.title).toBe('string')
+      expect(Array.isArray(c.courses)).toBe(true)
+    }
+  })
+
+  it('education entries have school, degree, period', () => {
+    for (const e of cv.education) {
+      expect(e.school && e.degree && e.period).toBeTruthy()
+    }
+  })
+
+  it('honors entries have an award and detail', () => {
+    for (const h of cv.honors) {
+      expect(h.award && h.detail).toBeTruthy()
     }
   })
 
@@ -32,27 +68,9 @@ describe('cv content model', () => {
     }
   })
 
-  it('research entries have title, venue, year', () => {
-    for (const r of cv.research) {
-      expect(typeof r.title).toBe('string')
-      expect(typeof r.venue).toBe('string')
-      expect(typeof r.year).toBe('number')
-    }
-  })
-
   it('books have a valid status', () => {
     for (const b of cv.books) {
       expect(['read', 'reading', 'tbr']).toContain(b.status)
-    }
-  })
-
-  it('skill levels are integers in 0..100', () => {
-    for (const g of cv.skills.groups) {
-      for (const it of g.items) {
-        expect(Number.isInteger(it.level)).toBe(true)
-        expect(it.level).toBeGreaterThanOrEqual(0)
-        expect(it.level).toBeLessThanOrEqual(100)
-      }
     }
   })
 })
