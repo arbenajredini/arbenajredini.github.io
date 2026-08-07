@@ -12,8 +12,10 @@ const { stagger } = useReveal()
 onMounted(() => stagger(list.value, { items: posts.value }))
 
 function iso(isoStr) {
-  const d = new Date(isoStr)
-  return isNaN(d) ? isoStr : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })
+  const m = /^(\d{4})-(\d{2})/.exec(isoStr)
+  if (!m) return isoStr
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+  return months[+m[2] - 1] + ' ' + m[1]
 }
 </script>
 

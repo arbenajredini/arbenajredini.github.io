@@ -25,6 +25,7 @@ onMounted(() => {
         :key="e.company + i"
         ref="items"
         class="timeline__item"
+        tabindex="0"
       >
         <Marginalia v-if="e.note" :ink="'var(--ink-experience)'">{{ e.note }}</Marginalia>
         <p class="mono muted timeline__period">{{ e.period }}</p>

@@ -15,4 +15,8 @@ describe('Blog', () => {
     await w.find('.post__toggle').trigger('click')
     expect(w.find('.post__excerpt').isVisible()).toBe(true)
   })
+  it('formats post dates as "May 2026" regardless of timezone', () => {
+    const w = mount(Blog)
+    expect(w.findAll('.post__date')[0].text()).toBe('May 2026')
+  })
 })

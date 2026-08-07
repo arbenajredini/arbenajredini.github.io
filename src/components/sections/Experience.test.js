@@ -23,4 +23,10 @@ describe('Experience', () => {
       expect(w.findAll('.marginalia').length).toBeGreaterThan(0)
     }
   })
+  it('makes every timeline item keyboard-focusable', () => {
+    const w = mount(Experience)
+    for (const item of w.findAll('.timeline__item')) {
+      expect(item.attributes('tabindex')).toBe('0')
+    }
+  })
 })
