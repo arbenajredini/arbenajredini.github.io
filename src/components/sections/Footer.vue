@@ -7,7 +7,7 @@ import { cv } from '../../content/cv'
     <nav class="footer__socials" aria-label="Social links">
       <a v-for="s in cv.socials" :key="s.label" :href="s.url" class="mono">{{ s.label }} ↗</a>
     </nav>
-    <p class="footer__credit serif-i">Typeset with Vue · GSAP · riso ink</p>
+    <p class="footer__credit serif-i">Typeset with Vue · riso ink · paper</p>
     <a href="#top" class="footer__top mono">↑ back to top</a>
   </footer>
 </template>
