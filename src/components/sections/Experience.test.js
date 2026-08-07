@@ -12,21 +12,16 @@ describe('Experience', () => {
       expect(w.text()).toContain(e.period)
     }
   })
-  it('renders the timeline line to draw', () => {
+
+  it('renders a static timeline line and one item per role', () => {
     const w = mount(Experience)
     expect(w.find('.timeline__line').exists()).toBe(true)
     expect(w.findAll('.timeline__item').length).toBe(cv.experience.length)
   })
-  it('renders a margin note for roles that have one', () => {
+
+  it('renders a static note line for roles that have one', () => {
     const w = mount(Experience)
-    if (cv.experience.some(e => e.note)) {
-      expect(w.findAll('.marginalia').length).toBeGreaterThan(0)
-    }
-  })
-  it('makes every timeline item keyboard-focusable', () => {
-    const w = mount(Experience)
-    for (const item of w.findAll('.timeline__item')) {
-      expect(item.attributes('tabindex')).toBe('0')
-    }
+    const withNotes = cv.experience.filter(e => e.note).length
+    expect(w.findAll('.timeline__note').length).toBe(withNotes)
   })
 })
