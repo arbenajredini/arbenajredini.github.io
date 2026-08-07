@@ -131,6 +131,15 @@ a:hover { color: var(--ink-experience); }
 }
 .skip-link:focus { left: 8px; }
 
+.theme-toggle {
+  position: fixed; top: 14px; right: 16px; z-index: 70;
+  background: var(--paper); color: var(--ink);
+  border: 1.5px solid currentColor; border-radius: 99px;
+  padding: 6px 14px; cursor: pointer; font: inherit;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.theme-toggle:hover { color: var(--ink-experience); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
