@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero.vue'
 import Experience from './components/sections/Experience.vue'
 import Projects from './components/sections/Projects.vue'
 import Research from './components/sections/Research.vue'
+import Books from './components/sections/Books.vue'
 </script>
 
 <template>
@@ -12,5 +13,6 @@ import Research from './components/sections/Research.vue'
     <Experience />
     <Projects />
     <Research />
+    <Books />
   </ZinePage>
 </template>
