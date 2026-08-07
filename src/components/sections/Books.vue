@@ -34,7 +34,7 @@ import { cv } from '../../content/cv'
   display: flex;
   box-shadow: 0 10px 18px -12px rgba(0, 0, 0, 0.45);
 }
-.book-card__spine { align-self: flex-end; font-family: var(--font-display); color: #1B1B1F; font-size: 0.8rem; writing-mode: vertical-rl; text-orientation: mixed; }
+.book-card__spine { align-self: flex-end; font-family: var(--font-display); color: var(--ink); font-size: 0.8rem; writing-mode: vertical-rl; text-orientation: mixed; }
 .book-card__title { font-family: var(--font-display); font-size: 1rem; margin: 8px 0 2px; }
 .book-card__author { margin: 0 0 6px; }
 .book-card__status { color: var(--ink-books); font-weight: 600; }
