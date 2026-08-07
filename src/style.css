@@ -135,3 +135,22 @@ a:hover { color: var(--ink-experience); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ---- Marginalia (gutter notes) ---- */
+.marginalia {
+  position: absolute;
+  right: calc(100% + 28px);
+  width: 170px;
+  top: 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--mink, var(--ink-muted));
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.marginalia::before { content: "\21B3 "; color: var(--mink, var(--ink-muted)); }
+.timeline__item:hover .marginalia,
+.timeline__item:focus-within .marginalia { opacity: 1; transform: translateX(0); }
+@media (max-width: 959px) { .marginalia { display: none; } }
