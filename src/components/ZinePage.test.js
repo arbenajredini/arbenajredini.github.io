@@ -8,13 +8,19 @@ beforeEach(() => {
 })
 
 describe('ZinePage', () => {
-  it('renders slot content and paper/ink chrome', () => {
+  it('renders slot content and paper chrome', () => {
     const wrapper = mount(ZinePage, {
       slots: { default: '<p class="probe">hello</p>' },
     })
     expect(wrapper.find('.probe').exists()).toBe(true)
     expect(wrapper.find('.zine').exists()).toBe(true)
     expect(wrapper.find('.zine__grain').exists()).toBe(true)
+    expect(wrapper.find('.zine__rules').exists()).toBe(true)
+  })
+
+  it('has no cursor-glow layer', () => {
+    const wrapper = mount(ZinePage)
+    expect(wrapper.find('.zine__glow').exists()).toBe(false)
   })
 
   it('initializes the theme attribute on the root element', () => {
